@@ -1,5 +1,5 @@
 <?php
-class {
+class cliente {
     public string $nome;
     public int $cpf;
 
@@ -15,8 +15,6 @@ class {
     public function getCpf(){
         return $this->cpf;
     }
-
-
 }
 
 ?>
