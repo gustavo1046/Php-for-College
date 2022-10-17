@@ -16,5 +16,4 @@ class cliente {
         return $this->cpf;
     }
 }
-
 ?>
