@@ -1,9 +1,9 @@
 <?php
 class aluguel {
-    public decimal $valor;
-    public date $dat_aluguel;
+    public float $valor;
+    public DateTime $dat_aluguel;
 
-    public function __construct(decimal $valor, date $dat_aluguel) {
+    public function __construct(float $valor, DateTime $dat_aluguel) {
         $this->valor = $valor;
         $this->dat_aluguel = $dat_aluguel;
     }
