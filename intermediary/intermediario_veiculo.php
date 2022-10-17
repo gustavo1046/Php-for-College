@@ -3,8 +3,8 @@
     require_once __DIR__ . "/../actions/action_veiculo.php";
 
 
-    $nome = $_POST["modelo"];
-    $cpf = $_POST["ano"];
+    $modelo = $_POST["modelo"];
+    $ano = $_POST["ano"];
     
     $veiculo = new veiculo($modelo, $ano);
     echo $veiculo->getModelo();
