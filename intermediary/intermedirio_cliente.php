@@ -7,6 +7,7 @@
     $cpf = $_POST["cpf"];
     
     $cliente = new cliente($nome, $cpf);
+    echo $cliente->getNome();
     $acao = new action_cliente();
     $acao->CadastrarCliente($cliente);
     header('Location: ../../index.html');
