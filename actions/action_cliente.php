@@ -20,8 +20,8 @@ class action_cliente
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
                 echo "<tr><td>".$rows["nome"]."</td><td>".$rows["cpf"]."</td>";
-                echo "<td><a href='clienteedit.php?id=".$rows["id"]."'>Edit</a></td>";
-                echo "<td><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
+                echo "<td td colspan= ''><a href='clienteedit.php?id=".$rows["id"]."'>Edit</a></td>";
+                echo "<td td colspan= ''><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
                 echo "</tr>";
                 #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
             }

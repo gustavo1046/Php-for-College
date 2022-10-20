@@ -29,8 +29,9 @@
         </div>
     
         <table border='1'>
-            <th>Nome</th>
-            <th>CPF</th>
+            <th colspan= "1">Modelo</th>
+            <th colspan= "1">Ano</th>
+            <th colspan= "2">Opções</th>
             <?php
                 require_once __DIR__ . "/actions/action_veiculo.php";
                 $acao = new action_veiculo();
