@@ -84,3 +84,7 @@ form {
 a:hover {
     box-shadow: 1px 1px 10px var(--white);
 }
+
+table {
+    width: 100%;
+}

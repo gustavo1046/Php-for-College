@@ -4,12 +4,23 @@
 
 
     $nome = $_POST["nome"];
-    $cpf = $_POST["cpf"];
+
+    // if(empty($_POST["cpf"])){
+    //     echo  "<script> alert('Email enviado com Sucesso!); </script>";
+    // }
     
+    // else {
+
+    // }
+
+    $cpf = $_POST["cpf"];
     $cliente = new cliente($nome, $cpf);
     $acao = new action_cliente();
     $acao->CadastrarCliente($cliente);
     header('Location: ../../index.html');
+   
+
+
 
     // if ($opcao == 1){
     //     $valor = $_POST["valor"];
