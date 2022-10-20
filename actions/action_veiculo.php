@@ -10,6 +10,25 @@ class action_veiculo
         $conexao->query($sql);
         echo $conexao->error;
     }
+
+    public function ListaVeiculos(){
+        $conexao = Conexao::Conectar();
+        $sql =  "select cod, modelo, ano from veiculo";
+        $result = $conexao->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($rows = mysqli_fetch_assoc($result)) {
+                echo "<tr><td>".$rows["modelo"]."</td><td>".$rows["ano"]."</td>";
+                echo "<td><a href='clienteedit.php?id=".$rows["id"]."'>Edit</a></td>";
+                echo "<td><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
+                echo "</tr>";
+                #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
+            }
+            } else {
+                echo "0 results";
+            }
+    }
 }
 
 ?>
