@@ -20,7 +20,7 @@
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_veiculo.php" method="POST">
                     <input type="text" name="modelo" id="text"placeholder="Digite o modelo do veículo"><br>
-                    <input type="text" name="ano" id="text" placeholder="Digite o ano do veículo"><br>
+                    <input type="text" name="ano" id="text" placeholder="Digite o ano do veículo" maxlength="4"><br>
                     <input type="submit" id="sub">
                 </form>
             </div>

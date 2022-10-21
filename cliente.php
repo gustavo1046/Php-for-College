@@ -19,8 +19,8 @@
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_cliente.php" method="POST">
-                    <input type="text" name="nome" id="text"placeholder="Digite seu nome"><br>
-                    <input type="text" name="cpf" id="text" placeholder="Digite seu cpf"><br>
+                    <input type="text" name="nome" id="text"placeholder="Digite seu nome" maxlength="70"><br>
+                    <input type="text" name="cpf" id="text" placeholder="Digite seu cpf" maxlength="11"><br>
                     <input type="submit" id="sub">
                 </form>
             </div>

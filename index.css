@@ -54,5 +54,5 @@ a {
 }
 
 a:hover {
-    box-shadow: 1px 1px 10px var(--white);
+    box-shadow: 1px 1px 10px greenyellow;
 }
