@@ -10,5 +10,5 @@
     echo $veiculo->getModelo();
     $acao = new action_veiculo();
     $acao->CadastrarVeiculo($veiculo);
-    header('Location: ../../index.html');
+    header('Location: ../../veiculos.php');
 ?>

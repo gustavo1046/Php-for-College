@@ -17,7 +17,7 @@
     $cliente = new cliente($nome, $cpf);
     $acao = new action_cliente();
     $acao->CadastrarCliente($cliente);
-    header('Location: ../../index.html');
+    header('Location: ../../cliente.php');
    
 
 
