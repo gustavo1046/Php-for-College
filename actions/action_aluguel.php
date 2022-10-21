@@ -11,6 +11,23 @@ class action_cliente
         echo $conexao->error;
     }
 
+    public function ListaAlugueis(){
+        $conexao = Conexao::Conectar();
+        $sql =  "select cod, data, valor, ativo, carro, cliente from aluguel";
+        $result = $conexao->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($rows = mysqli_fetch_assoc($result)) {
+                echo "<tr><td>".$rows["data"]."</td><td>".$rows["valor"]."</td><td>".$rows["ativo"]."</td><td>".$rows["carro"]."</td><td>".$rows["cliente"]."</td><td>";
+                echo "</tr>";
+                #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
+            }
+            } else {
+                echo "0 results";
+            }
+    }
+
     // public function EditarAtividade(Atividade $atividade, int $id)
     // {
     //     $conexao = Conexao::Conectar();

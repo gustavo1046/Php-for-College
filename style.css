@@ -14,10 +14,10 @@ body{
 .all {
     box-shadow: 10px 10px 10px white;
     width: 70%;
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
-    border-top-right-radius: 13px;
-    border-top-left-radius: 13px;
+    border-radius: 13px;
 }
 
 .title {
@@ -82,9 +82,14 @@ form {
 }
 
 a:hover {
-    box-shadow: 1px 1px 10px var(--white);
+    box-shadow: 1px 1px 10px greenyellow;
 }
 
 table {
     width: 100%;
+    border-color: #D2D4C8;
+    border-radius: 10px;
+    background-color: #2e3532;
+    color: #D2D4C8;
+    margin-top: 50px;
 }
