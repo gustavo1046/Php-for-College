@@ -18,9 +18,9 @@
             </div>
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>
-                <form action="./intermediary/intermediario_cliente.php" method="POST">
+                <form action="./intermediary/intermediario_aluguel.php" method="POST">
                     <input type="number" name="valor" id="text"placeholder="Valor do aluguel" step="0.01"><br>
-                    <input type="text" name="Data Aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
+                    <input type="date" name="Data_aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
                     <input type="text" name="id_carro" id="text"placeholder="Codigo do carro"><br>
                     <input type="text" name="id_cliente" id="text"placeholder="Codigo do cliente"><br>
                     <input type="submit" id="sub">

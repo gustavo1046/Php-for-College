@@ -1,7 +1,7 @@
 <?php
 class cliente {
-    public string $nome;
-    public int $cpf;
+    private string $nome;
+    private int $cpf;
 
     public function __construct(string $nome, int $cpf){
         $this->nome = $nome;

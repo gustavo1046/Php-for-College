@@ -1,7 +1,7 @@
 <?php
 class veiculo {
-    public string $modelo;
-    public int $ano;
+    private string $modelo;
+    private int $ano;
 
     public function __construct(string $modelo, int $ano) {
         $this->modelo = $modelo;
