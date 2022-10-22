@@ -6,7 +6,7 @@ class action_veiculo
     public function CadastrarVeiculo(veiculo $veiculo)
     {
         $conexao = Conexao::Conectar();
-        $sql =  "INSERT INTO veiculo (modelo, ano) VALUES ('$veiculo->modelo', $veiculo->ano)";
+        $sql =  "INSERT INTO veiculo (modelo, ano) VALUES ('".$veiculo->getModelo()."', ".$veiculo->getAno().")";
         $conexao->query($sql);
         echo $conexao->error;
     }

@@ -14,7 +14,7 @@ class aluguel {
         return $this->valor;
     }
 
-    public function getDataAluga(){
+    public function getDat_Aluguel(){
         return $this->dat_aluguel;
     }
 
@@ -22,7 +22,7 @@ class aluguel {
         return $this->id_carro;
     }
 
-    public function getId_cleinte(){
+    public function getId_cliente(){
         return $this->id_cliente;
     }
 }

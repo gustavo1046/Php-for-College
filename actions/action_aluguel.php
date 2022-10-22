@@ -6,7 +6,7 @@ class action_cliente
     public function CadastrarAluguel(aluguel $aluguel)
     {
         $conexao = Conexao::Conectar();
-        $sql =  "INSERT INTO aluguel (valor, dat_aluguel) VALUES ('$aluguel->valor', $aluguel->dat_aluguel)";
+        $sql =  "INSERT INTO aluguel (valor, dat_aluguel, id_carro, id_cliente) VALUES ('".$aluguel->getValor()."','".$aluguel->getDat_aluguel()."', ".$aluguel->getId_carro().", ".$aluguel->getId_cliente().";";
         $conexao->query($sql);
         echo $conexao->error;
     }

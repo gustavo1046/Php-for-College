@@ -7,7 +7,6 @@
     $ano = $_POST["ano"];
     
     $veiculo = new veiculo($modelo, $ano);
-    echo $veiculo->getModelo();
     $acao = new action_veiculo();
     $acao->CadastrarVeiculo($veiculo);
     header('Location: ../../veiculos.php');

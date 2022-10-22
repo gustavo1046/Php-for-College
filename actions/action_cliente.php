@@ -6,7 +6,7 @@ class action_cliente
     public function CadastrarCliente(cliente $cliente)
     {
         $conexao = Conexao::Conectar();
-        $sql =  "INSERT INTO cliente (nome, cpf) VALUES ('$cliente->nome', $cliente->cpf)";
+        $sql =  "INSERT INTO cliente (nome, cpf) VALUES ('".$cliente->getNome()."', ".$cliente->getCpf().")";
         $conexao->query($sql);
         echo $conexao->error;
     }
