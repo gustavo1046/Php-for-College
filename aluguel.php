@@ -20,9 +20,15 @@
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_aluguel.php" method="POST">
                     <input type="number" name="valor" id="text"placeholder="Valor do aluguel" step="0.01"><br>
-                    <input type="date" name="Data_aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
+                    <input type="date" name="data_aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
                     <input type="text" name="id_carro" id="text"placeholder="Codigo do carro"><br>
                     <input type="text" name="id_cliente" id="text"placeholder="Codigo do cliente"><br>
+                    <div class="botao">
+                        <input type="radio" name="ativo" id="ativo" value="Ativo" checked> <label for="ativo">ativo</label>
+                    </div>
+                    <div class="botao">
+                        <input type="radio" name="ativo" id="inativo" value="Inativo"><label for="ativo">inativo</label>
+                    </div>
                     <input type="submit" id="sub">
                 </form>
             </div>

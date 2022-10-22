@@ -89,3 +89,7 @@ table {
     background-color: #2e3532;
     color: #D2D4C8;
 }
+
+botao{
+    display: grid;
+}
