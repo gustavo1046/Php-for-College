@@ -28,9 +28,9 @@
             </div>
             <h2>Clientes</h2>
             <table border='1'>
+                <th colspan= "1">Codigo</th>
                 <th colspan= "1">Nome</th>
-                <th colspan= "1">CPF</th>
-                <th colspan= "2">Opções</th>
+                <th colspan= "2">CPF</th>
                 <?php
                     require_once __DIR__ . "/actions/action_cliente.php";
                     $acao = new action_cliente();
@@ -39,9 +39,9 @@
             </table><br><br>
             <h2>Veículos</h2>
             <table border='1'>
-                <th colspan= "1">Nome</th>
-                <th colspan= "1">CPF</th>
-                <th colspan= "2">Opções</th>
+                <th colspan= "1">Codigo</th>
+                <th colspan= "1">Modelo</th>
+                <th colspan= "2">CPF</th>
                 <?php
                     require_once __DIR__ . "/actions/action_veiculo.php";
                     $acao = new action_veiculo();
