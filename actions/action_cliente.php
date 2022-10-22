@@ -30,6 +30,23 @@ class action_cliente
             }
     }
 
+    public function ListaClientesAluguel(){
+        $conexao = Conexao::Conectar();
+        $sql =  "select cod, nome, cpf from cliente";
+        $result = $conexao->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($rows = mysqli_fetch_assoc($result)) {
+                echo "<tr><td>".$rows["cod"]."</td><td>".$rows["nome"]."</td><td>".$rows["cpf"]."</td>";
+                echo "</tr>";
+                #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
+            }
+            } else {
+                echo "0 results";
+            }
+    }
+
     // public function EditarAtividade(Atividade $atividade, int $id)
     // {
     //     $conexao = Conexao::Conectar();

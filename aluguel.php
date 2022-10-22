@@ -19,13 +19,37 @@
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_cliente.php" method="POST">
-                    <input type="text" name="Valor" id="text"placeholder="Valor do aluguel"><br>
-                    <input type="text" name="Data Aluguel" id="text" placeholder="Data do aluguel"><br>
+                    <input type="number" name="valor" id="text"placeholder="Valor do aluguel" step="0.01"><br>
+                    <input type="text" name="Data Aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
+                    <input type="text" name="id_carro" id="text"placeholder="Codigo do carro"><br>
+                    <input type="text" name="id_cliente" id="text"placeholder="Codigo do cliente"><br>
                     <input type="submit" id="sub">
                 </form>
             </div>
-            <div class="tabela">
-            </div>
+            <h2>Clientes</h2>
+            <table border='1'>
+                <th colspan= "1">Nome</th>
+                <th colspan= "1">CPF</th>
+                <th colspan= "2">Opções</th>
+                <?php
+                    require_once __DIR__ . "/actions/action_cliente.php";
+                    $acao = new action_cliente();
+                    $acao->ListaClientesAluguel();
+                ?>
+            </table><br><br>
+            <h2>Veículos</h2>
+            <table border='1'>
+                <th colspan= "1">Nome</th>
+                <th colspan= "1">CPF</th>
+                <th colspan= "2">Opções</th>
+                <?php
+                    require_once __DIR__ . "/actions/action_veiculo.php";
+                    $acao = new action_veiculo();
+                    $acao->ListaVeiculosAluguel();
+                ?>
+            </table>
+
+
         </div>
     </body>
 </body>

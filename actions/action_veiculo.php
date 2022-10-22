@@ -29,6 +29,23 @@ class action_veiculo
                 echo "0 results";
             }
     }
+
+    public function ListaVeiculosAluguel(){
+        $conexao = Conexao::Conectar();
+        $sql =  "select cod, modelo, ano from veiculo";
+        $result = $conexao->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($rows = mysqli_fetch_assoc($result)) {
+                echo "<tr><td>".$rows["cod"]."</td><td>".$rows["modelo"]."</td><td>".$rows["ano"]."</td>";
+                echo "</tr>";
+                #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
+            }
+            } else {
+                echo "0 results";
+            }
+    }
 }
 
 ?>

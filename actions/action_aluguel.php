@@ -3,7 +3,7 @@ require_once __DIR__ . "/../data/conexao.php";
 require_once __DIR__ . "/../classes/aluguel.php";
 class action_cliente
 {
-    public function CadastrarCliente(aluguel $aluguel)
+    public function CadastrarAluguel(aluguel $aluguel)
     {
         $conexao = Conexao::Conectar();
         $sql =  "INSERT INTO aluguel (valor, dat_aluguel) VALUES ('$aluguel->valor', $aluguel->dat_aluguel)";
@@ -11,9 +11,9 @@ class action_cliente
         echo $conexao->error;
     }
 
-    public function ListaAlugueis(){
+    public function ListaAlugueis($ano){
         $conexao = Conexao::Conectar();
-        $sql =  "select cod, data, valor, ativo, carro, cliente from aluguel";
+        $sql =  "select cod, data, valor, ativo, carro, cliente from aluguel where ano =".$ano.";";
         $result = $conexao->query($sql);
 
         if ($result->num_rows > 0) {
