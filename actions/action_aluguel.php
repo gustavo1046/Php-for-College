@@ -11,15 +11,16 @@ class action_aluguel
         echo $conexao->error;
     }
 
-    public function ListaAlugueis($ano){
+    public function ListaAlugueis(){
         $conexao = Conexao::Conectar();
-        $sql =  "select cod, data, valor, ativo, carro, cliente from aluguel where ano =".$ano.";";
+        $sql =  "select data, valor, ativo, id_carro, id_cliente from aluguel;";
         $result = $conexao->query($sql);
+        // where ano =".$ano."
 
         if ($result->num_rows > 0) {
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
-                echo "<tr><td>".$rows["data"]."</td><td>".$rows["valor"]."</td><td>".$rows["ativo"]."</td><td>".$rows["carro"]."</td><td>".$rows["cliente"]."</td><td>";
+                echo "<tr><td>".$rows["data"]."</td><td>".$rows["valor"]."</td><td>".$rows["ativo"]."</td><td>".$rows["carro"]."</td><td>".$rows["cliente"]."</td>";
                 echo "</tr>";
                 #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
             }
@@ -28,6 +29,8 @@ class action_aluguel
             }
     }
 
+
+    
     // public function EditarAtividade(Atividade $atividade, int $id)
     // {
     //     $conexao = Conexao::Conectar();

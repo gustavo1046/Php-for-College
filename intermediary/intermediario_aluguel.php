@@ -16,8 +16,6 @@
     else {
         $ativo = 0;
     }
-    echo $ativo;
-    echo $data;
 
     $aluguel = new aluguel($valor, $ativo, $data, $id_carro, $id_cliente);
     $acao = new action_aluguel();

@@ -14,7 +14,7 @@
         </div>
         <div class="content">
             <div class="options">
-                <a href="./index.html">Voltar</a>
+                <a href="./index.php">Voltar</a>
             </div>
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>

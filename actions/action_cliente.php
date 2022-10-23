@@ -47,6 +47,15 @@ class action_cliente
             }
     }
 
+    public function EditaCliente(cliente $cliente, $id){
+        $conexao = Conexao::Conectar();
+        $sql =  "select * from cliente where id=".$id.";";
+        $result = $conexao->query($sql);
+        $row = $result->fetch_assoc();
+
+
+    }
+
     // public function EditarAtividade(Atividade $atividade, int $id)
     // {
     //     $conexao = Conexao::Conectar();

@@ -17,6 +17,19 @@
             <a href="cliente.php">Pagina de Clientes</a>
             <a href="veiculo.php">Pagina de Veículos</a>
         </div>
+        <table border='1'>
+            <th colspan= "1">Valor</th>
+            <th colspan= "1">Data</th>
+            <th colspan= "1">Atividade</th>
+            <th colspan= "1">id_carro</th>
+            <th colspan= "1">id_cliente</th>
+            <?php
+                require_once __DIR__ . "/actions/action_aluguel.php";
+                $acao = new action_aluguel();
+                $acao->ListaAlugueis();
+            ?>
+        </table>
+    </div>
     </body>
 </body>
 </html>

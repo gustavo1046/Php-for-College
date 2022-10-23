@@ -42,7 +42,6 @@ body{
     margin-right: auto;
     border-bottom-right-radius: 13px;
     border-bottom-left-radius: 13px;
-    padding-bottom: 20px;
 }
 
 a {
@@ -55,4 +54,13 @@ a {
 
 a:hover {
     box-shadow: 1px 1px 10px greenyellow;
+}
+
+table {
+    width: 100%;
+    border-color: #D2D4C8;
+    border-radius: 10px;
+    background-color: #2e3532;
+    color: #D2D4C8;
+    margin-top: 10px;
 }
