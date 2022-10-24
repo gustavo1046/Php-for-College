@@ -93,3 +93,7 @@ table {
 botao{
     display: grid;
 }
+
+#esconde{
+    display: none;
+}

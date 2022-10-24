@@ -19,8 +19,9 @@ class action_cliente
         if ($result->num_rows > 0) {
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
+                $id = 0;
                 echo "<tr><td>".$rows["nome"]."</td><td>".$rows["cpf"]."</td>";
-                echo "<td td colspan= ''><a href='clienteedit.php?id=".$rows["id"]."'>Edit</a></td>";
+                echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."'>Editar</a></td>";
                 echo "<td td colspan= ''><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
                 echo "</tr>";
                 #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
@@ -49,11 +50,8 @@ class action_cliente
 
     public function EditaCliente(cliente $cliente, $id){
         $conexao = Conexao::Conectar();
-        $sql =  "select * from cliente where id=".$id.";";
-        $result = $conexao->query($sql);
-        $row = $result->fetch_assoc();
-
-
+        $sql =  "UPDATE cliente set nome = '".$cliente->getNome()."', cpf= ".$cliente->getCpf()." where id=".$id.";";
+        $conexao->query($sql);
     }
 
     // public function EditarAtividade(Atividade $atividade, int $id)

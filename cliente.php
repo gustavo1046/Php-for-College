@@ -41,3 +41,13 @@
     </div>
 </body>
 </html>
+
+<script>
+    function editar(id) {
+        document.getElementById("esconde").value = 2;
+    }
+
+    function excluir(id) {
+        document.getElementById("esconde").value = 3;
+    }
+</script>

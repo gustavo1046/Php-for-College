@@ -3,21 +3,30 @@
     require_once __DIR__ . "/../actions/action_cliente.php";
 
 
-    $nome = $_POST["nome"];
+    $id = $_REQUEST['id'];
+    if($id == 0) {
+        $nome = $_POST["nome"];
+        $cpf = $_POST["cpf"];
+        $cliente = new cliente($nome, $cpf);
+        $acao = new action_cliente();
+        $acao->CadastrarCliente($cliente);
+        header('Location: ../../cliente.php');
+    }
 
-    // if(empty($_POST["cpf"])){
-    //     echo  "<script> alert('Email enviado com Sucesso!); </script>";
-    // }
-    
-    // else {
+    else {
+        $nome = $_POST["nome"];
+        $cpf = $_POST["cpf"];
+        echo "here";
+        echo $nome;
+        echo $cpf;
+        $cliente = new cliente($nome, $cpf);
+        $acao = new action_cliente();
+        $acao->EditaCliente($cliente, $id);
+        header('Location: ../../cliente.php');
+    }
 
-    // }
 
-    $cpf = $_POST["cpf"];
-    $cliente = new cliente($nome, $cpf);
-    $acao = new action_cliente();
-    $acao->CadastrarCliente($cliente);
-    header('Location: ../../cliente.php');
+
    
 
 
