@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <script src="script.js"> </script>
     <title>Locadora Acorda Pedrinho</title>
 </head>
 <body>
@@ -21,8 +22,8 @@
                 <form action="./intermediary/intermediario_aluguel.php" method="POST">
                     <input type="number" name="valor" id="text"placeholder="Valor do aluguel" step="0.01"><br>
                     <input type="date" name="data_aluguel" id="text" placeholder="Data do aluguel" maxlength="4"><br>
-                    <input type="text" name="id_carro" id="text"placeholder="Codigo do carro"><br>
-                    <input type="text" name="id_cliente" id="text"placeholder="Codigo do cliente"><br>
+                    <input type="text" name="id_carro" id="text"placeholder="Codigo do carro" onkeypress="return somenteNumeros(event);"><br>
+                    <input type="text" name="id_cliente" id="text"placeholder="Codigo do cliente" onkeypress="return somenteNumeros(event);"><br>
                     <div class="botao">
                         <input type="radio" name="ativo" id="ativo" value="Ativo" checked> <label for="ativo">ativo</label>
                     </div>
