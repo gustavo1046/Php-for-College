@@ -11,7 +11,7 @@ class action_aluguel
         echo $conexao->error;
     }
 
-    public function ListaAlugueis(){
+    public function ListaAlugueis(){ #lista os alugueis na tela de index
         $conexao = Conexao::Conectar();
         $sql =  "select data, valor, ativo, id_carro carro, id_cliente cliente from aluguel;";
         $result = $conexao->query($sql);

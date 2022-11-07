@@ -55,8 +55,6 @@
                     $acao->ListaVeiculosAluguel();
                 ?>
             </table>
-
-
         </div>
     </body>
 </body>

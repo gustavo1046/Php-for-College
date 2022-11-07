@@ -42,12 +42,7 @@ id_cliente int not null
 ALTER TABLE `aluguel` ADD CONSTRAINT `fk_id_carro` FOREIGN KEY ( `id_carro` ) REFERENCES `veiculo` ( `cod` ) ;
 ALTER TABLE `aluguel` ADD CONSTRAINT `fk_id_cliente` FOREIGN KEY ( `id_cliente` ) REFERENCES `cliente` ( `cod` ) ;
 
-select * from aluguel;
-
 use locadora;
 INSERT INTO aluguel (valor, data, ativo, id_carro, id_cliente) VALUES (250.50,'2000/11/14', 1, 1, 2);
-
-select cod, data, valor, ativo, id_carro carro, id_cliente cliente from aluguel where ano = 2000;
-
 
 UPDATE cliente set nome = 'gustavo', cpf= "1999999" where id="5";
