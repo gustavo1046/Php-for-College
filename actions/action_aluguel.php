@@ -13,7 +13,7 @@ class action_aluguel
 
     public function ListaAlugueis(){
         $conexao = Conexao::Conectar();
-        $sql =  "select data, valor, ativo, id_carro, id_cliente from aluguel;";
+        $sql =  "select data, valor, ativo, id_carro carro, id_cliente cliente from aluguel;";
         $result = $conexao->query($sql);
         // where ano =".$ano."
 

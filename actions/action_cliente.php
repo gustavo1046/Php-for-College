@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . "/../data/conexao.php";
 require_once __DIR__ . "/../classes/cliente.php";
+require_once __DIR__ . "/../cliente.php";
 class action_cliente
 {
     public function CadastrarCliente(cliente $cliente)
@@ -19,10 +20,9 @@ class action_cliente
         if ($result->num_rows > 0) {
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
-                $id = 0;
                 echo "<tr><td>".$rows["nome"]."</td><td>".$rows["cpf"]."</td>";
-                echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."'>Editar</a></td>";
-                echo "<td td colspan= ''><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
+                echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."&op=1'>Editar</a></td>";
+                echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."&op=2'>Delete</a></td>";
                 echo "</tr>";
                 #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
             }
@@ -50,7 +50,7 @@ class action_cliente
 
     public function EditaCliente(cliente $cliente, $id){
         $conexao = Conexao::Conectar();
-        $sql =  "UPDATE cliente set nome = '".$cliente->getNome()."', cpf= ".$cliente->getCpf()." where id=".$id.";";
+        $sql =  "UPDATE cliente set nome = '".$cliente->getNome()."', cpf= ".$cliente->getCpf()." where cod=".$id.";";
         $conexao->query($sql);
     }
 
@@ -62,13 +62,12 @@ class action_cliente
     //     echo $conexao->error;
     // }
 
-    // public function ExcluirAtividade(int $id)
-    // {
-    //     $conexao = Conexao::Conectar();
-    //     $sql =  "DELETE from tb_atividade where cod_atividade = $id";
-    //     $conexao->query($sql);
-    //     echo $conexao->error;
-    // }
-
+    public function ExcluirCliente(int $id)
+    {
+        $conexao = Conexao::Conectar();
+        $sql =  "DELETE from cliente where cod = $id";
+        $conexao->query($sql);
+        echo $conexao->error;
+    }
 
 }

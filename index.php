@@ -18,11 +18,11 @@
             <a href="veiculo.php">Pagina de Veículos</a>
         </div>
         <table border='1'>
-            <th colspan= "1">Valor</th>
             <th colspan= "1">Data</th>
+            <th colspan= "1">Valor</th>
             <th colspan= "1">Atividade</th>
-            <th colspan= "1">id_carro</th>
-            <th colspan= "1">id_cliente</th>
+            <th colspan= "1">Carro</th>
+            <th colspan= "1">Cliente</th>
             <?php
                 require_once __DIR__ . "/actions/action_aluguel.php";
                 $acao = new action_aluguel();

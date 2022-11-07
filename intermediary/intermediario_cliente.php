@@ -1,9 +1,12 @@
 <?php
     require_once __DIR__ . "/../classes/cliente.php";
     require_once __DIR__ . "/../actions/action_cliente.php";
+    require_once __DIR__ . "/../cliente.php";
 
 
     $id = $_REQUEST['id'];
+    $op = $_REQUEST['op'];
+
     if($id == 0) {
         $nome = $_POST["nome"];
         $cpf = $_POST["cpf"];
@@ -13,22 +16,18 @@
         header('Location: ../../cliente.php');
     }
 
-    else {
-        $nome = $_POST["nome"];
-        $cpf = $_POST["cpf"];
-        echo "here";
-        echo $nome;
-        echo $cpf;
+    if($op == 1) {
         $cliente = new cliente($nome, $cpf);
         $acao = new action_cliente();
         $acao->EditaCliente($cliente, $id);
-        header('Location: ../../cliente.php');
+        // header('Location: ../../cliente.php');
     }
 
-
-
-   
-
+    if($op==2){
+        $acao = new action_cliente();
+        $acao->ExcluirCliente($id);
+        header('Location: ../../cliente.php');
+    }
 
 
     // if ($opcao == 1){
