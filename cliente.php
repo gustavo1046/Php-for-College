@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,8 +23,10 @@
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_cliente.php" method="POST">
-                    <input type="text" name="nome" id="text"placeholder="Digite seu nome" maxlength="70"><br>
-                    <input type="text" name="cpf" id="text" placeholder="Digite seu cpf" onblur="validarCPF(this);" 
+                    <input type="hidden" name="id" value="<?= $_SESSION['dados']['cod'] ?>">
+                    <input type="hidden" name="opcao" value="<?= $_SESSION['dados']['opcao'] ?>">
+                    <input type="text" name="nome" id="text"placeholder="Digite seu nome" value="<?= $_SESSION['dados']['nome'] ?>" maxlength="70"><br>
+                    <input type="text" name="cpf" id="text" placeholder="Digite seu cpf" value="<?= $_SESSION['dados']['cpf'] ?>" onblur="validarCPF(this);" 
                     onkeypress="return somenteNumeros(event);" maxlength="11" required><br>
                     <input type="submit" id="sub">
                 </form>

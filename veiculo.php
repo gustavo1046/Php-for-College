@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,8 +23,10 @@
             <div class="cadastro">
                 <h2>formulario de cadastro</h2>
                 <form action="./intermediary/intermediario_veiculo.php" method="POST">
-                    <input type="text" name="modelo" id="text"placeholder="Digite o modelo do veículo"><br>
-                    <input type="text" name="ano" id="text" placeholder="Digite o ano do veículo" maxlength="4" onkeypress="return somenteNumeros(event);"><br>
+                <input type="hidden" name="id" value="<?= $_SESSION['dados']['cod'] ?>">
+                    <input type="hidden" name="opcao" value="<?= $_SESSION['dados']['opcao'] ?>">
+                    <input type="text" name="modelo" id="text"placeholder="Digite o modelo do veículo" value="<?= $_SESSION['dados']['modelo'] ?>"><br>
+                    <input type="text" name="ano" id="text" placeholder="Digite o ano do veículo" maxlength="4" onkeypress="return somenteNumeros(event);"value="<?= $_SESSION['dados']['ano'] ?>"><br>
                     <input type="submit" id="sub">
                 </form>
             </div>
