@@ -33,7 +33,7 @@ body{
 }
 
 .content {
-    height: 300px;
+    height: 150px;
     background-color: var(--black);
     display: grid;
     justify-content: center;

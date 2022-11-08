@@ -20,7 +20,6 @@ class action_cliente
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
                 echo "<tr><td>".$rows["nome"]."</td><td>".$rows["cpf"]."</td>";
-                echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."&op=1'>Editar</a></td>"; #esses dois botoes que precisam funcionar, e tambem tem que implementar a msma cosia pros carros
                 echo "<td td colspan= ''><a href='intermediary/intermediario_cliente.php?id=".$rows["cod"]."&op=2'>Delete</a></td>"; #esse aqui é o outro
                 echo "</tr>";
             }
@@ -44,12 +43,6 @@ class action_cliente
             } else {
                 echo "0 results";
             }
-    }
-
-    public function EditaCliente(cliente $cliente, $id){
-        $conexao = Conexao::Conectar();
-        $sql =  "UPDATE cliente set nome = '".$cliente->getNome()."', cpf= ".$cliente->getCpf()." where cod=".$id.";";
-        $conexao->query($sql);
     }
 
     public function ExcluirCliente(int $id)

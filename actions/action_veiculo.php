@@ -20,8 +20,7 @@ class action_veiculo
             // output data of each row
             while($rows = mysqli_fetch_assoc($result)) {
                 echo "<tr><td>".$rows["modelo"]."</td><td>".$rows["ano"]."</td>";
-                echo "<td><a href='clienteedit.php?id=".$rows["id"]."'>Edit</a></td>";
-                echo "<td><a href='clientedelete.php?id=".$rows["id"]."'>Delete</a></td>";
+                echo "<td><a href='intermediary/intermediario_veiculo.php?id=".$rows["cod"]."'>Delete</a></td>";
                 echo "</tr>";
                 #echo "id: " . $rows["id"]. " - Nome: " . $rows["nome"]. ",CPF: " . $rows["cpf"]. "<br>";
             }
@@ -45,6 +44,14 @@ class action_veiculo
             } else {
                 echo "0 results";
             }
+    }
+
+    public function ExcluirVeiculo(int $id)
+    {
+        $conexao = Conexao::Conectar();
+        $sql =  "DELETE from veiculo where cod = $id";
+        $conexao->query($sql);
+        echo $conexao->error;
     }
 }
 

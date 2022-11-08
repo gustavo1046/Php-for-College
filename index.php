@@ -13,7 +13,6 @@
             <h1>Locadora de Veículos Acorda Pedrinho</h1>
         </div>
         <div class="content">
-            <a href="aluguel.php">Pagina de Alugueis</a>
             <a href="cliente.php">Pagina de Clientes</a>
             <a href="veiculo.php">Pagina de Veículos</a>
         </div>
